@@ -4,8 +4,18 @@ namespace Core\Entify\DataProvider\Interfaces;
 
 use Core\Entify\Interfaces\DataProviderInterface;
 
+/**
+ * Data providers for entities that can be paginated
+ * Pagination info must get into $info in EntityInterface
+ */
 interface DataProviderPaginatedInterface extends DataProviderInterface
 {
 
+    /**
+     * Paginate result
+     * @param int $perPage
+     * @param int $page
+     * @return void
+     */
     public function paginate(int $perPage = 15, int $page = 1): void;
 }

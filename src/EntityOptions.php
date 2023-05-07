@@ -7,6 +7,9 @@ namespace Core\Entify;
 use Core\Entify\Interfaces\EntityOptionsInterface;
 use function property_exists;
 
+/**
+ * Default handler options for process Entity
+ */
 class EntityOptions implements EntityOptionsInterface
 {
 

@@ -14,12 +14,35 @@ use function count,
              min,
              array_slice;
 
+/**
+ * Data provider for arrays
+ */
 class ArrayDataProvider implements DataProviderPaginatedInterface
 {
 
+    /**
+     * Entity handlers object for manage list of handlers
+     * that will be run in EntityInterface
+     * @var EntityHandlersInterface
+     */
     private EntityHandlersInterface $entityHandlers;
+    
+    /**
+     * Array data, that need to be processed
+     * @var array
+     */
     private array $data;
+    
+    /**
+     * Paginated array after pagination
+     * @var array|null
+     */
     private ?array $paginatedData = null;
+    
+    /**
+     * Additional info about pagination or other
+     * @var array|null
+     */
     private ?array $info = null;
 
     public function __construct(
@@ -31,6 +54,9 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
         $this->data = $data;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function paginate(int $perPage = 15, int $page = 1): void
     {
         $total = count($this->data);
@@ -52,6 +78,9 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
         $this->paginatedData = $sliced;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getEntity(): EntityInterface
     {
 

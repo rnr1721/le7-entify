@@ -112,14 +112,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/Interfaces/DataProviderPaginatedInterface.php"><a href="files/src-dataprovider-interfaces-dataproviderpaginatedinterface.html"><abbr title="src/DataProvider/Interfaces/DataProviderPaginatedInterface.php">DataProviderPaginatedInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">11</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Interface for DataProvider objects. DataProvider is class that from
-any source get data, convert it to array that can be handled by
-EntityInterface. The DataProviderInterface have getEntity() method,
-that returns EntityInterface, that can be rendered</p>
+            <p class="phpdocumentor-summary">Data providers for entities that can be paginated
+Pagination info must get into $info in EntityInterface</p>
 
 
 
@@ -147,7 +145,7 @@ that returns EntityInterface, that can be rendered</p>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Paginate result</dd>
 
         </dl>
 
@@ -206,17 +204,17 @@ that returns EntityInterface, that can be rendered</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/Interfaces/DataProviderPaginatedInterface.php"><a href="files/src-dataprovider-interfaces-dataproviderpaginatedinterface.html"><abbr title="src/DataProvider/Interfaces/DataProviderPaginatedInterface.php">DataProviderPaginatedInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Paginate result</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">paginate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$perPage</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">15</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$page</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -224,16 +222,14 @@ that returns EntityInterface, that can be rendered</p>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                  = <span class="phpdocumentor-signature__argument__default-value">15</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$page</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                  = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 

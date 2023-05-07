@@ -16,20 +16,46 @@ use function ini_get,
              unlink,
              finfo_close,
              finfo_open,
-             finfo_close,
              finfo_file,
              in_array,
              trim,
              strtolower,
              strlen;
 
+/**
+ * Data provider for forms
+ */
 class FormDataProvider implements DataProviderFormInterface
 {
 
+    /**
+     * PSR ServerRequest
+     * @var ServerRequestInterface
+     */
     private ServerRequestInterface $request;
+    
+    /**
+     * Entity handlers object for manage handlers queue
+     * @var EntityHandlersInterface
+     */
     private EntityHandlersInterface $entityHandlers;
+    
+    /**
+     * Directory to copy uploaded files
+     * @var string|null
+     */
     private ?string $uploadDir = null;
+    
+    /**
+     * Allowed mime types for uploaded files
+     * @var array
+     */
     private array $allowed = [];
+    
+    /**
+     * Max file size in bytes
+     * @var int
+     */
     private int $maxSize = 0;
 
     public function __construct(
@@ -47,6 +73,11 @@ class FormDataProvider implements DataProviderFormInterface
         $this->maxSize = $this->convertToBytes($maxSize);
     }
 
+    /**
+     * Get entity from form
+     * @return EntityInterface Form entity
+     * @throws RuntimeException
+     */
     public function getEntity(): EntityInterface
     {
 
@@ -113,6 +144,11 @@ class FormDataProvider implements DataProviderFormInterface
         );
     }
 
+    /**
+     * Convert to bytes of human readable params. 
+     * @param string $value For example, 2M, 500K, 1G
+     * @return int Size in bytes
+     */
     private function convertToBytes(string $value): int
     {
         $valueTrimmed = trim($value);

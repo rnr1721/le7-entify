@@ -13,6 +13,9 @@ use function ucfirst,
              str_replace,
              class_exists;
 
+/**
+ * Loader for rules Model using classes.
+ */
 class RulesLoaderClass implements RulesLoaderInterface
 {
 
@@ -24,6 +27,10 @@ class RulesLoaderClass implements RulesLoaderInterface
      */
     protected string $namespace;
 
+    /**
+     * In this constructor you can set namespace for finding rules model classes
+     * @param string $modelNamespace
+     */
     public function __construct(string $modelNamespace = '\\')
     {
         $this->namespace = $modelNamespace;

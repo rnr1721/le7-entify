@@ -12,6 +12,10 @@ use Core\Entify\Interfaces\EntityHandlersInterface;
 use function count,
              array_merge;
 
+/**
+ * Entity. This class we get from DataProvider by running getEntity() method.
+ * Inside this class launched DefaultHandler and own handlers
+ */
 class EntityMain implements EntityInterface
 {
 

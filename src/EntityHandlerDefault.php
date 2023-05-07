@@ -17,6 +17,9 @@ use function array_keys,
              array_merge,
              count;
 
+/**
+ * Default handler
+ */
 class EntityHandlerDefault implements EntityHandlerDefaultInterface
 {
 

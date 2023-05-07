@@ -166,35 +166,36 @@ Rules can be classes or arrays or json or xml files etc.</dd>
     <span>
                                 &nbsp;: <a href="classes/Core-Entify-Interfaces-EntityHandlersInterface.html"><abbr title="\Core\Entify\Interfaces\EntityHandlersInterface">EntityHandlersInterface</abbr></a>    </span>
 </dt>
-<dd>Get set of handlers for process entity rules</dd>
+<dd>Get default handlers list for running inside EntityMain (EntityInterface)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Core-Entify-HandlerFactory.html#method_getFilterLibrary">getFilterLibrary()</a>
     <span>
                                 &nbsp;: <a href="classes/Core-Entify-Interfaces-FilterLibraryInterface.html"><abbr title="\Core\Entify\Interfaces\FilterLibraryInterface">FilterLibraryInterface</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get filter library using rulesName.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Core-Entify-HandlerFactory.html#method_getHandler">getHandler()</a>
     <span>
                                 &nbsp;: <a href="classes/Core-Entify-Interfaces-EntityHandlerDefaultInterface.html"><abbr title="\Core\Entify\Interfaces\EntityHandlerDefaultInterface">EntityHandlerDefaultInterface</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get default handler to inject in EntityHandlersInterface</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Core-Entify-HandlerFactory.html#method_getOptions">getOptions()</a>
     <span>
                                 &nbsp;: <a href="classes/Core-Entify-Interfaces-EntityOptionsInterface.html"><abbr title="\Core\Entify\Interfaces\EntityOptionsInterface">EntityOptionsInterface</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get options method, that can set and get bool options
+for DefaultHandler</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Core-Entify-HandlerFactory.html#method_getValidator">getValidator()</a>
     <span>
                                 &nbsp;: <abbr title="\Core\Interfaces\ValidatorInterface">ValidatorInterface</abbr>    </span>
 </dt>
-<dd></dd>
+<dd>Get ready-to-use ValidatorInterface</dd>
 
         </dl>
 
@@ -308,11 +309,11 @@ Rules can be classes or arrays or json or xml files etc.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/HandlerFactory.php"><a href="files/src-handlerfactory.html"><abbr title="src/HandlerFactory.php">HandlerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get set of handlers for process entity rules</p>
+        <p class="phpdocumentor-summary">Get default handlers list for running inside EntityMain (EntityInterface)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -341,16 +342,18 @@ Rules can be classes or arrays or json or xml files etc.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/HandlerFactory.php"><a href="files/src-handlerfactory.html"><abbr title="src/HandlerFactory.php">HandlerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get filter library using rulesName.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getFilterLibrary</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rulesName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Core-Entify-Interfaces-FilterLibraryInterface.html"><abbr title="\Core\Entify\Interfaces\FilterLibraryInterface">FilterLibraryInterface</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Rules name will be used in error messages</p>
+</section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -359,8 +362,7 @@ Rules can be classes or arrays or json or xml files etc.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
@@ -385,17 +387,17 @@ Rules can be classes or arrays or json or xml files etc.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/HandlerFactory.php"><a href="files/src-handlerfactory.html"><abbr title="src/HandlerFactory.php">HandlerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get default handler to inject in EntityHandlersInterface</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getHandler</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Core-Entify-Interfaces-EntityHandlerDefaultInterface.html"><abbr title="\Core\Entify\Interfaces\EntityHandlerDefaultInterface">EntityHandlerDefaultInterface</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -418,17 +420,18 @@ Rules can be classes or arrays or json or xml files etc.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/HandlerFactory.php"><a href="files/src-handlerfactory.html"><abbr title="src/HandlerFactory.php">HandlerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get options method, that can set and get bool options
+for DefaultHandler</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getOptions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Core-Entify-Interfaces-EntityOptionsInterface.html"><abbr title="\Core\Entify\Interfaces\EntityOptionsInterface">EntityOptionsInterface</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -451,17 +454,17 @@ Rules can be classes or arrays or json or xml files etc.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/HandlerFactory.php"><a href="files/src-handlerfactory.html"><abbr title="src/HandlerFactory.php">HandlerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get ready-to-use ValidatorInterface</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getValidator</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Core\Interfaces\ValidatorInterface">ValidatorInterface</abbr></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 

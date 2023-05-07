@@ -103,15 +103,10 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Core-Entify-DataProvider-Interfaces-DataProviderFormInterface.html"><abbr title="\Core\Entify\DataProvider\Interfaces\DataProviderFormInterface">DataProviderFormInterface</abbr></a></dt>
-        <dd>Interface for DataProvider objects. DataProvider is class that from
-any source get data, convert it to array that can be handled by
-EntityInterface. The DataProviderInterface have getEntity() method,
-that returns EntityInterface, that can be rendered</dd>
+        <dd>Data provider for forms that extends DataProviderInterface</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Core-Entify-DataProvider-Interfaces-DataProviderPaginatedInterface.html"><abbr title="\Core\Entify\DataProvider\Interfaces\DataProviderPaginatedInterface">DataProviderPaginatedInterface</abbr></a></dt>
-        <dd>Interface for DataProvider objects. DataProvider is class that from
-any source get data, convert it to array that can be handled by
-EntityInterface. The DataProviderInterface have getEntity() method,
-that returns EntityInterface, that can be rendered</dd>
+        <dd>Data providers for entities that can be paginated
+Pagination info must get into $info in EntityInterface</dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Core-Entify-Interfaces-DataProviderInterface.html"><abbr title="\Core\Entify\Interfaces\DataProviderInterface">DataProviderInterface</abbr></a></dt>
         <dd>Interface for DataProvider objects. DataProvider is class that from
 any source get data, convert it to array that can be handled by
@@ -143,25 +138,28 @@ list of handlers that process entity</dd>
         <dd>This interface for users that store rules in model classes.</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html"><abbr title="\Core\Entify\DataProvider\ArrayDataProvider">ArrayDataProvider</abbr></a></dt>
-        <dd></dd>
+        <dd>Data provider for arrays</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-DataProvider-FormDataProvider.html"><abbr title="\Core\Entify\DataProvider\FormDataProvider">FormDataProvider</abbr></a></dt>
+        <dd>Data provider for forms</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-DefaultFilterLibrary.html"><abbr title="\Core\Entify\DefaultFilterLibrary">DefaultFilterLibrary</abbr></a></dt>
-        <dd></dd>
+        <dd>Default filter library. This class contain filters,
+that runs by queue (defined in default handler rules)</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-Entification.html"><abbr title="\Core\Entify\Entification">Entification</abbr></a></dt>
-        <dd></dd>
+        <dd>This is factory for giving us prepared data providers.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-EntityHandlerDefault.html"><abbr title="\Core\Entify\EntityHandlerDefault">EntityHandlerDefault</abbr></a></dt>
-        <dd></dd>
+        <dd>Default handler</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-EntityHandlers.html"><abbr title="\Core\Entify\EntityHandlers">EntityHandlers</abbr></a></dt>
-        <dd></dd>
+        <dd>Entity handlers manager (Get list, add and quese handlers, bypass list etc)</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-EntityMain.html"><abbr title="\Core\Entify\EntityMain">EntityMain</abbr></a></dt>
-        <dd></dd>
+        <dd>Entity. This class we get from DataProvider by running getEntity() method.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-EntityOptions.html"><abbr title="\Core\Entify\EntityOptions">EntityOptions</abbr></a></dt>
-        <dd></dd>
+        <dd>Default handler options for process Entity</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-HandlerFactory.html"><abbr title="\Core\Entify\HandlerFactory">HandlerFactory</abbr></a></dt>
         <dd>Factory for get handlers list for processing entity</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-Rules.html"><abbr title="\Core\Entify\Rules">Rules</abbr></a></dt>
-        <dd></dd>
+        <dd>Entity Rules</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Core-Entify-RulesLoaderClass.html"><abbr title="\Core\Entify\RulesLoaderClass">RulesLoaderClass</abbr></a></dt>
-        <dd></dd>
+        <dd>Loader for rules Model using classes.</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Core-Entify-RulesLoaderTrait.html"><abbr title="\Core\Entify\RulesLoaderTrait">RulesLoaderTrait</abbr></a></dt>
         <dd>You can use this trait for own model rules loaders.</dd>

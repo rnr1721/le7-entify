@@ -6,6 +6,9 @@ namespace Core\Entify;
 
 use Core\Entify\Interfaces\RulesInterface;
 
+/**
+ * Entity Rules
+ */
 class Rules implements RulesInterface
 {
 

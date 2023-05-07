@@ -12,6 +12,9 @@ use function get_class,
              array_key_exists,
              in_array;
 
+/**
+ * Entity handlers manager (Get list, add and quese handlers, bypass list etc)
+ */
 class EntityHandlers implements EntityHandlersInterface
 {
 

@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider",
             "name": "ArrayDataProvider",
-            "summary": "",
+            "summary": "Data\u0020provider\u0020for\u0020arrays",
             "url": "classes/Core-Entify-DataProvider-ArrayDataProvider.html"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider\u003A\u003A__construct\u0028\u0029",
@@ -13,7 +13,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider\u003A\u003Apaginate\u0028\u0029",
             "name": "paginate",
-            "summary": "",
+            "summary": "Paginate\u0020result",
             "url": "classes/Core-Entify-DataProvider-ArrayDataProvider.html#method_paginate"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider\u003A\u003AgetEntity\u0028\u0029",
@@ -23,42 +23,87 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider\u003A\u003A\u0024entityHandlers",
             "name": "entityHandlers",
-            "summary": "",
+            "summary": "Entity\u0020handlers\u0020object\u0020for\u0020manage\u0020list\u0020of\u0020handlers\nthat\u0020will\u0020be\u0020run\u0020in\u0020EntityInterface",
             "url": "classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_entityHandlers"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider\u003A\u003A\u0024data",
             "name": "data",
-            "summary": "",
+            "summary": "Array\u0020data,\u0020that\u0020need\u0020to\u0020be\u0020processed",
             "url": "classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_data"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider\u003A\u003A\u0024paginatedData",
             "name": "paginatedData",
-            "summary": "",
+            "summary": "Paginated\u0020array\u0020after\u0020pagination",
             "url": "classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_paginatedData"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\ArrayDataProvider\u003A\u003A\u0024info",
             "name": "info",
-            "summary": "",
+            "summary": "Additional\u0020info\u0020about\u0020pagination\u0020or\u0020other",
             "url": "classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_info"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider",
+            "name": "FormDataProvider",
+            "summary": "Data\u0020provider\u0020for\u0020forms",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#method___construct"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003AgetEntity\u0028\u0029",
+            "name": "getEntity",
+            "summary": "Get\u0020entity\u0020from\u0020form",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#method_getEntity"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003AconvertToBytes\u0028\u0029",
+            "name": "convertToBytes",
+            "summary": "Convert\u0020to\u0020bytes\u0020of\u0020human\u0020readable\u0020params.",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#method_convertToBytes"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003A\u0024request",
+            "name": "request",
+            "summary": "PSR\u0020ServerRequest",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#property_request"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003A\u0024entityHandlers",
+            "name": "entityHandlers",
+            "summary": "Entity\u0020handlers\u0020object\u0020for\u0020manage\u0020handlers\u0020queue",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#property_entityHandlers"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003A\u0024uploadDir",
+            "name": "uploadDir",
+            "summary": "Directory\u0020to\u0020copy\u0020uploaded\u0020files",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#property_uploadDir"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003A\u0024allowed",
+            "name": "allowed",
+            "summary": "Allowed\u0020mime\u0020types\u0020for\u0020uploaded\u0020files",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#property_allowed"
+        },                {
+            "fqsen": "\\Core\\Entify\\DataProvider\\FormDataProvider\u003A\u003A\u0024maxSize",
+            "name": "maxSize",
+            "summary": "Max\u0020file\u0020size\u0020in\u0020bytes",
+            "url": "classes/Core-Entify-DataProvider-FormDataProvider.html#property_maxSize"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\Interfaces\\DataProviderFormInterface",
             "name": "DataProviderFormInterface",
-            "summary": "Interface\u0020for\u0020DataProvider\u0020objects.\u0020DataProvider\u0020is\u0020class\u0020that\u0020from\nany\u0020source\u0020get\u0020data,\u0020convert\u0020it\u0020to\u0020array\u0020that\u0020can\u0020be\u0020handled\u0020by\nEntityInterface.\u0020The\u0020DataProviderInterface\u0020have\u0020getEntity\u0028\u0029\u0020method,\nthat\u0020returns\u0020EntityInterface,\u0020that\u0020can\u0020be\u0020rendered",
+            "summary": "Data\u0020provider\u0020for\u0020forms\u0020that\u0020extends\u0020DataProviderInterface",
             "url": "classes/Core-Entify-DataProvider-Interfaces-DataProviderFormInterface.html"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\Interfaces\\DataProviderPaginatedInterface",
             "name": "DataProviderPaginatedInterface",
-            "summary": "Interface\u0020for\u0020DataProvider\u0020objects.\u0020DataProvider\u0020is\u0020class\u0020that\u0020from\nany\u0020source\u0020get\u0020data,\u0020convert\u0020it\u0020to\u0020array\u0020that\u0020can\u0020be\u0020handled\u0020by\nEntityInterface.\u0020The\u0020DataProviderInterface\u0020have\u0020getEntity\u0028\u0029\u0020method,\nthat\u0020returns\u0020EntityInterface,\u0020that\u0020can\u0020be\u0020rendered",
+            "summary": "Data\u0020providers\u0020for\u0020entities\u0020that\u0020can\u0020be\u0020paginated\nPagination\u0020info\u0020must\u0020get\u0020into\u0020\u0024info\u0020in\u0020EntityInterface",
             "url": "classes/Core-Entify-DataProvider-Interfaces-DataProviderPaginatedInterface.html"
         },                {
             "fqsen": "\\Core\\Entify\\DataProvider\\Interfaces\\DataProviderPaginatedInterface\u003A\u003Apaginate\u0028\u0029",
             "name": "paginate",
-            "summary": "",
+            "summary": "Paginate\u0020result",
             "url": "classes/Core-Entify-DataProvider-Interfaces-DataProviderPaginatedInterface.html#method_paginate"
         },                {
             "fqsen": "\\Core\\Entify\\DefaultFilterLibrary",
             "name": "DefaultFilterLibrary",
-            "summary": "",
+            "summary": "Default\u0020filter\u0020library.\u0020This\u0020class\u0020contain\u0020filters,\nthat\u0020runs\u0020by\u0020queue\u0020\u0028defined\u0020in\u0020default\u0020handler\u0020rules\u0029",
             "url": "classes/Core-Entify-DefaultFilterLibrary.html"
         },                {
             "fqsen": "\\Core\\Entify\\DefaultFilterLibrary\u003A\u003A__construct\u0028\u0029",
@@ -153,7 +198,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\Entification",
             "name": "Entification",
-            "summary": "",
+            "summary": "This\u0020is\u0020factory\u0020for\u0020giving\u0020us\u0020prepared\u0020data\u0020providers.",
             "url": "classes/Core-Entify-Entification.html"
         },                {
             "fqsen": "\\Core\\Entify\\Entification\u003A\u003A__construct\u0028\u0029",
@@ -183,7 +228,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\EntityHandlerDefault",
             "name": "EntityHandlerDefault",
-            "summary": "",
+            "summary": "Default\u0020handler",
             "url": "classes/Core-Entify-EntityHandlerDefault.html"
         },                {
             "fqsen": "\\Core\\Entify\\EntityHandlerDefault\u003A\u003A__construct\u0028\u0029",
@@ -273,7 +318,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\EntityHandlers",
             "name": "EntityHandlers",
-            "summary": "",
+            "summary": "Entity\u0020handlers\u0020manager\u0020\u0028Get\u0020list,\u0020add\u0020and\u0020quese\u0020handlers,\u0020bypass\u0020list\u0020etc\u0029",
             "url": "classes/Core-Entify-EntityHandlers.html"
         },                {
             "fqsen": "\\Core\\Entify\\EntityHandlers\u003A\u003A__construct\u0028\u0029",
@@ -328,7 +373,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\EntityMain",
             "name": "EntityMain",
-            "summary": "",
+            "summary": "Entity.\u0020This\u0020class\u0020we\u0020get\u0020from\u0020DataProvider\u0020by\u0020running\u0020getEntity\u0028\u0029\u0020method.",
             "url": "classes/Core-Entify-EntityMain.html"
         },                {
             "fqsen": "\\Core\\Entify\\EntityMain\u003A\u003A__construct\u0028\u0029",
@@ -398,7 +443,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\EntityOptions",
             "name": "EntityOptions",
-            "summary": "",
+            "summary": "Default\u0020handler\u0020options\u0020for\u0020process\u0020Entity",
             "url": "classes/Core-Entify-EntityOptions.html"
         },                {
             "fqsen": "\\Core\\Entify\\EntityOptions\u003A\u003AsetDeleteRedundant\u0028\u0029",
@@ -468,27 +513,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\HandlerFactory\u003A\u003AgetHandlers\u0028\u0029",
             "name": "getHandlers",
-            "summary": "Get\u0020set\u0020of\u0020handlers\u0020for\u0020process\u0020entity\u0020rules",
+            "summary": "Get\u0020default\u0020handlers\u0020list\u0020for\u0020running\u0020inside\u0020EntityMain\u0020\u0028EntityInterface\u0029",
             "url": "classes/Core-Entify-HandlerFactory.html#method_getHandlers"
         },                {
             "fqsen": "\\Core\\Entify\\HandlerFactory\u003A\u003AgetHandler\u0028\u0029",
             "name": "getHandler",
-            "summary": "",
+            "summary": "Get\u0020default\u0020handler\u0020to\u0020inject\u0020in\u0020EntityHandlersInterface",
             "url": "classes/Core-Entify-HandlerFactory.html#method_getHandler"
         },                {
             "fqsen": "\\Core\\Entify\\HandlerFactory\u003A\u003AgetOptions\u0028\u0029",
             "name": "getOptions",
-            "summary": "",
+            "summary": "Get\u0020options\u0020method,\u0020that\u0020can\u0020set\u0020and\u0020get\u0020bool\u0020options\nfor\u0020DefaultHandler",
             "url": "classes/Core-Entify-HandlerFactory.html#method_getOptions"
         },                {
             "fqsen": "\\Core\\Entify\\HandlerFactory\u003A\u003AgetValidator\u0028\u0029",
             "name": "getValidator",
-            "summary": "",
+            "summary": "Get\u0020ready\u002Dto\u002Duse\u0020ValidatorInterface",
             "url": "classes/Core-Entify-HandlerFactory.html#method_getValidator"
         },                {
             "fqsen": "\\Core\\Entify\\HandlerFactory\u003A\u003AgetFilterLibrary\u0028\u0029",
             "name": "getFilterLibrary",
-            "summary": "",
+            "summary": "Get\u0020filter\u0020library\u0020using\u0020rulesName.",
             "url": "classes/Core-Entify-HandlerFactory.html#method_getFilterLibrary"
         },                {
             "fqsen": "\\Core\\Entify\\HandlerFactory\u003A\u003A\u0024rules",
@@ -768,7 +813,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\Rules",
             "name": "Rules",
-            "summary": "",
+            "summary": "Entity\u0020Rules",
             "url": "classes/Core-Entify-Rules.html"
         },                {
             "fqsen": "\\Core\\Entify\\Rules\u003A\u003A__construct\u0028\u0029",
@@ -798,12 +843,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Core\\Entify\\RulesLoaderClass",
             "name": "RulesLoaderClass",
-            "summary": "",
+            "summary": "Loader\u0020for\u0020rules\u0020Model\u0020using\u0020classes.",
             "url": "classes/Core-Entify-RulesLoaderClass.html"
         },                {
             "fqsen": "\\Core\\Entify\\RulesLoaderClass\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "In\u0020this\u0020constructor\u0020you\u0020can\u0020set\u0020namespace\u0020for\u0020finding\u0020rules\u0020model\u0020classes",
             "url": "classes/Core-Entify-RulesLoaderClass.html#method___construct"
         },                {
             "fqsen": "\\Core\\Entify\\RulesLoaderClass\u003A\u003AfindModel\u0028\u0029",

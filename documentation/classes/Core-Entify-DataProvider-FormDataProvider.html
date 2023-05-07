@@ -96,7 +96,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    ArrayDataProvider
+    FormDataProvider
 
     
             <div class="phpdocumentor-element__package">
@@ -108,18 +108,18 @@
     
             <span class="phpdocumentor-element__implements">
             implements
-                            <a href="classes/Core-Entify-DataProvider-Interfaces-DataProviderPaginatedInterface.html"><abbr title="\Core\Entify\DataProvider\Interfaces\DataProviderPaginatedInterface">DataProviderPaginatedInterface</abbr></a>                    </span>
+                            <a href="classes/Core-Entify-DataProvider-Interfaces-DataProviderFormInterface.html"><abbr title="\Core\Entify\DataProvider\Interfaces\DataProviderFormInterface">DataProviderFormInterface</abbr></a>                    </span>
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Data provider for arrays</p>
+            <p class="phpdocumentor-summary">Data provider for forms</p>
 
 
 
@@ -133,9 +133,8 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Core-Entify-DataProvider-Interfaces-DataProviderPaginatedInterface.html"><abbr title="\Core\Entify\DataProvider\Interfaces\DataProviderPaginatedInterface">DataProviderPaginatedInterface</abbr></a></dt>
-        <dd>Data providers for entities that can be paginated
-Pagination info must get into $info in EntityInterface</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Core-Entify-DataProvider-Interfaces-DataProviderFormInterface.html"><abbr title="\Core\Entify\DataProvider\Interfaces\DataProviderFormInterface">DataProviderFormInterface</abbr></a></dt>
+        <dd>Data provider for forms that extends DataProviderInterface</dd>
     
     
     
@@ -149,54 +148,60 @@ Pagination info must get into $info in EntityInterface</dd>
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_data">$data</a>
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_allowed">$allowed</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd>Array data, that need to be processed</dd>
+<dd>Allowed mime types for uploaded files</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_entityHandlers">$entityHandlers</a>
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_entityHandlers">$entityHandlers</a>
     <span>
                         &nbsp;: <a href="classes/Core-Entify-Interfaces-EntityHandlersInterface.html"><abbr title="\Core\Entify\Interfaces\EntityHandlersInterface">EntityHandlersInterface</abbr></a>            </span>
 </dt>
-<dd>Entity handlers object for manage list of handlers
-that will be run in EntityInterface</dd>
+<dd>Entity handlers object for manage handlers queue</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_info">$info</a>
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_maxSize">$maxSize</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
+                        &nbsp;: int            </span>
 </dt>
-<dd>Additional info about pagination or other</dd>
+<dd>Max file size in bytes</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_paginatedData">$paginatedData</a>
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_request">$request</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
+                        &nbsp;: <abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr>            </span>
 </dt>
-<dd>Paginated array after pagination</dd>
+<dd>PSR ServerRequest</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_uploadDir">$uploadDir</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+<dd>Directory to copy uploaded files</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#method___construct">__construct()</a>
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#method_getEntity">getEntity()</a>
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#method_getEntity">getEntity()</a>
     <span>
                                 &nbsp;: <a href="classes/Core-Entify-Interfaces-EntityInterface.html"><abbr title="\Core\Entify\Interfaces\EntityInterface">EntityInterface</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get entity from form</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#method_paginate">paginate()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#method_convertToBytes">convertToBytes()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: int    </span>
 </dt>
-<dd>Paginate result</dd>
+<dd>Convert to bytes of human readable params.</dd>
 
         </dl>
 
@@ -208,7 +213,7 @@ that will be run in EntityInterface</dd>
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -217,26 +222,26 @@ that will be run in EntityInterface</dd>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_data">
-        $data
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_data" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_allowed">
+        $allowed
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_allowed" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Array data, that need to be processed</p>
+        <p class="phpdocumentor-summary">Allowed mime types for uploaded files</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$data</span>
-    </code>
+    <span class="phpdocumentor-signature__name">$allowed</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
@@ -252,19 +257,18 @@ that will be run in EntityInterface</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_entityHandlers">
         $entityHandlers
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_entityHandlers" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_entityHandlers" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Entity handlers object for manage list of handlers
-that will be run in EntityInterface</p>
+        <p class="phpdocumentor-summary">Entity handlers object for manage handlers queue</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
@@ -284,26 +288,26 @@ that will be run in EntityInterface</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_info">
-        $info
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_info" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_maxSize">
+        $maxSize
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_maxSize" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Additional info about pagination or other</p>
+        <p class="phpdocumentor-summary">Max file size in bytes</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
-    <span class="phpdocumentor-signature__name">$info</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$maxSize</span>
+     = <span class="phpdocumentor-signature__default-value">0</span></code>
 
     
     
@@ -317,25 +321,58 @@ that will be run in EntityInterface</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_paginatedData">
-        $paginatedData
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#property_paginatedData" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_request">
+        $request
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_request" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Paginated array after pagination</p>
+        <p class="phpdocumentor-summary">PSR ServerRequest</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
-    <span class="phpdocumentor-signature__name">$paginatedData</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr></span>
+    <span class="phpdocumentor-signature__name">$request</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_uploadDir">
+        $uploadDir
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#property_uploadDir" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">47</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Directory to copy uploaded files</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$uploadDir</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
@@ -348,7 +385,7 @@ that will be run in EntityInterface</p>
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -358,19 +395,19 @@ that will be run in EntityInterface</p>
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Core-Entify-Interfaces-EntityHandlersInterface.html"><abbr title="\Core\Entify\Interfaces\EntityHandlersInterface">EntityHandlersInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$entityHandlers</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Core-Entify-Interfaces-EntityHandlersInterface.html"><abbr title="\Core\Entify\Interfaces\EntityHandlersInterface">EntityHandlersInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$entityHandlers</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uploadDir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$allowed</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[&#039;image/jpeg&#039;, &#039;image/png&#039;]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;2M&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -385,9 +422,33 @@ that will be run in EntityInterface</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr></span>
                             </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uploadDir</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$allowed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[&#039;image/jpeg&#039;, &#039;image/png&#039;]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$maxSize</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;2M&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -410,16 +471,17 @@ that will be run in EntityInterface</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getEntity">
         getEntity()
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#method_getEntity" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#method_getEntity" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get entity from form</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getEntity</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Core-Entify-Interfaces-EntityInterface.html"><abbr title="\Core\Entify\Interfaces\EntityInterface">EntityInterface</abbr></a></span></code>
@@ -433,10 +495,11 @@ that will be run in EntityInterface</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritDoc</span>
+                    <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\RuntimeException">RuntimeException</abbr></span>
+                                                            
                                              
                                     </dd>
                         </dl>
@@ -444,70 +507,56 @@ that will be run in EntityInterface</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Core-Entify-Interfaces-EntityInterface.html"><abbr title="\Core\Entify\Interfaces\EntityInterface">EntityInterface</abbr></a></span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Form entity</p>
+</section>
+
     
 </article>
                     <article
         class="phpdocumentor-element
             -method
-            -public
+            -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_paginate">
-        paginate()
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#method_paginate" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_convertToBytes">
+        convertToBytes()
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#method_convertToBytes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/ArrayDataProvider.php"><a href="files/src-dataprovider-arraydataprovider.html"><abbr title="src/DataProvider/ArrayDataProvider.php">ArrayDataProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/DataProvider/FormDataProvider.php"><a href="files/src-dataprovider-formdataprovider.html"><abbr title="src/DataProvider/FormDataProvider.php">FormDataProvider.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Paginate result</p>
+        <p class="phpdocumentor-summary">Convert to bytes of human readable params.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">paginate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$perPage</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">15</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$page</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">convertToBytes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$perPage</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">15</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$page</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>For example, 2M, 500K, 1G</p>
+</section>
+
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritDoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Size in bytes</p>
+</section>
+
     
 </article>
             </section>
@@ -588,7 +637,7 @@ that will be run in EntityInterface</p>
 </section>
             </div>
         </div>
-        <a href="classes/Core-Entify-DataProvider-ArrayDataProvider.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Core-Entify-DataProvider-FormDataProvider.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

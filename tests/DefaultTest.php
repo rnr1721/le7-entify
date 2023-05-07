@@ -13,6 +13,8 @@ use Core\Entify\RulesLoaderClass;
 use Core\Entify\Entification;
 use Core\Entify\EntityHandlers;
 use Core\Utils\ValidatorFactory;
+use Core\Entify\Interfaces\EntityHandlerDefaultInterface;
+use Core\Entify\Interfaces\EntityInterface;
 
 require_once 'vendor/autoload.php';
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -100,8 +102,8 @@ class DefaultTest extends PHPUnit\Framework\TestCase
                 $this->getRules(),
                 $this->getFilters($rulesName),
                 $this->getOptions()
-                );
-        
+        );
+
         $result = $handler->handle([
             'name' => 'Joe',
             'lastname' => 'Doe',
@@ -110,12 +112,50 @@ class DefaultTest extends PHPUnit\Framework\TestCase
             'password' => '',
             'skills' => 6
         ]);
-        
+
         $this->assertIsInt($result[0]['age']);
         $wait = '&lt;script&gt;alert()&lt;/script&gt;Lorem ipsum dolor sit amet';
         $this->assertEquals($wait, $result[0]['description']);
         $this->assertEquals(1, count($handler->getErrors()));
-        
+    }
+
+    public function testEntityHandlers()
+    {
+        $handler = new EntityHandlerDefault(
+                $this->getValidator(),
+                $this->getRules(),
+                $this->getFilters('contacts'),
+                $this->getOptions()
+        );
+        $handlersObject = new EntityHandlers($handler);
+
+        $handlers = $handlersObject->getHandlers();
+
+        $this->assertEquals(1, count($handlers));
+
+        $this->assertTrue($handlers[EntityHandlerDefault::class] instanceof EntityHandlerDefaultInterface);
+    }
+
+    public function testEntification()
+    {
+
+        $loader = new RulesLoaderClass('\\Entities\\');
+        $entification = new Entification($loader);
+
+        $data = [
+            [
+                'name' => 'Joe',
+                'lastname' => 'Doe',
+                'age' => '30',
+                'email' => 'admin@example',
+                'password' => '',
+                'skills' => 6
+            ]
+        ];
+
+        $provider = $entification->getArrayProvider($data, 'contacts');
+        $entity = $provider->getEntity();
+        $this->assertTrue($entity instanceof EntityInterface);
     }
 
     public function getRules(): Rules
@@ -135,10 +175,9 @@ class DefaultTest extends PHPUnit\Framework\TestCase
         return new DefaultFilterLibrary($rulesName);
     }
 
-
     public function getOptions()
     {
         return new EntityOptions();
     }
-    
+
 }

@@ -13,6 +13,10 @@ use Core\Entify\HandlerFactory;
 use Psr\Http\Message\ServerRequestInterface;
 use function is_string;
 
+/**
+ * This is factory for giving us prepared data providers.
+ * This is start point to use Entify.
+ */
 class Entification
 {
 

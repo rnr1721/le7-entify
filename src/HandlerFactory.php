@@ -35,11 +35,19 @@ class HandlerFactory implements HandlerFactoryInterface
         $this->rules = $rules;
     }
 
+    /**
+     * Get default handlers list for running inside EntityMain (EntityInterface)
+     * @return EntityHandlersInterface
+     */
     public function getHandlers(): EntityHandlersInterface
     {
         return new EntityHandlers($this->getHandler());
     }
 
+    /**
+     * Get default handler to inject in EntityHandlersInterface
+     * @return EntityHandlerDefaultInterface
+     */
     protected function getHandler(): EntityHandlerDefaultInterface
     {
         return new EntityHandlerDefault(
@@ -50,17 +58,32 @@ class HandlerFactory implements HandlerFactoryInterface
         );
     }
 
+    /**
+     * Get options method, that can set and get bool options
+     * for DefaultHandler
+     * @return EntityOptionsInterface
+     */
     protected function getOptions(): EntityOptionsInterface
     {
         return new EntityOptions();
     }
 
+    /**
+     * Get ready-to-use ValidatorInterface
+     * @return ValidatorInterface
+     */
     protected function getValidator(): ValidatorInterface
     {
         $factory = new ValidatorFactory();
         return $factory->getValidator();
     }
 
+    /**
+     * Get filter library using rulesName.
+     * Rules name will be used in error messages
+     * @param string $rulesName
+     * @return FilterLibraryInterface
+     */
     protected function getFilterLibrary(string $rulesName): FilterLibraryInterface
     {
         return new DefaultFilterLibrary($rulesName);

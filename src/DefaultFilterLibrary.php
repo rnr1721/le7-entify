@@ -19,6 +19,10 @@ use function count,
              htmlspecialchars,
              settype;
 
+/**
+ * Default filter library. This class contain filters,
+ * that runs by queue (defined in default handler rules)
+ */
 class DefaultFilterLibrary implements FilterLibraryInterface
 {
 
