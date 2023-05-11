@@ -17,7 +17,7 @@ class EntityOptions implements EntityOptionsInterface
     private bool $returnIfValidationErrors = false;
     private bool $skipFilters = false;
     private bool $skipValidation = false;
-    private bool $deleteRedundant = false;
+    private bool $deleteRedundant = true;
 
     /**
      * @inheritdoc

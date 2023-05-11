@@ -15,7 +15,8 @@ interface EntityOptionsInterface
 
     /**
      * Delete redundant fields from entity
-     * @param bool $deleteRedundant Default false
+     * @param bool $deleteRedundant
+     * Default true
      * @return self
      */
     public function setDeleteRedundant(bool $deleteRedundant): self;
