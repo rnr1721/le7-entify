@@ -16,9 +16,15 @@ interface EntityInterface
 
     /**
      * Export this entity to array
+     * @param bool $first Only first record
      * @return array|null
      */
     public function export(): array|null;
+
+    /**
+     * Export only first of result
+     */
+    public function exportFirst() : array|null;
 
     /**
      * Render entity with EntityRendererInterface

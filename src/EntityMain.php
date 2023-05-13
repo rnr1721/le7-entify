@@ -89,6 +89,18 @@ class EntityMain implements EntityInterface
     /**
      * @inheritdoc
      */
+    public function exportFirst(): array|null
+    {
+        $result = $this->export();
+        if (is_array($result) && isset($result[0])) {
+            return $result[0];
+        }
+        return null;
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getErrors(): array|null
     {
         if (count($this->errors) === 0) {
