@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Core\Entify\DataProvider;
 
+use Core\Entify\Paginator;
 use Core\Entify\Interfaces\EntityHandlersInterface;
 use Core\Entify\DataProvider\Interfaces\DataProviderPaginatedInterface;
 use Core\Entify\Interfaces\EntityInterface;
 use Core\Entify\EntityMain;
 use function count,
-             ceil,
-             max,
-             min,
              array_slice;
 
 /**
@@ -60,20 +58,16 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
     public function paginate(int $perPage = 15, int $page = 1): void
     {
         $total = count($this->data);
-        $lastPage = (int) ceil($total / $perPage);
-        $currentPage = max(1, min($lastPage, $page));
 
-        $offset = ($currentPage - 1) * $perPage;
+                $paginator = new Paginator(
+                $page,
+                $perPage,
+                $total);
+        
+        $offset = $paginator->getOffset();
         $sliced = array_slice($this->data, $offset, $perPage, true);
-
-        $this->info = [
-            'current_page' => $currentPage,
-            'from' => $offset + 1,
-            'last_page' => $lastPage,
-            'per_page' => $perPage,
-            'to' => $offset + count($sliced),
-            'total' => $total,
-        ];
+        
+        $this->info = $paginator->toArray(count($sliced));
 
         $this->paginatedData = $sliced;
     }
