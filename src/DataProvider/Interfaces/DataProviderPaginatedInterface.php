@@ -15,7 +15,14 @@ interface DataProviderPaginatedInterface extends DataProviderInterface
      * Paginate result
      * @param int $perPage
      * @param int $page
+     * @param int $prevCount
+     * @param int $nextCount
      * @return void
      */
-    public function paginate(int $perPage = 15, int $page = 1): void;
+    public function paginate(
+            int $perPage = 15,
+            int $page = 1,
+            int $prevCount = 5,
+            int $nextCount = 5
+    ): void;
 }

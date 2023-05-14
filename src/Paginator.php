@@ -79,7 +79,7 @@ class Paginator implements PaginatorInterface
         $start = max(1, $this->page - $count);
         $end = $this->page - 1;
 
-        return range($start, $end);
+        return range($start, $end >= $start ? $end : $start - 1);
     }
 
     /**
@@ -92,7 +92,7 @@ class Paginator implements PaginatorInterface
         $start = $this->page + 1;
         $end = min($this->page + $count, $this->lastPage);
 
-        return range($start, $end);
+        return range($start <= $end ? $start : $this->lastPage, $end);
     }
 
     /**

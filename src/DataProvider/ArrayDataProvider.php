@@ -24,19 +24,19 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
      * @var EntityHandlersInterface
      */
     private EntityHandlersInterface $entityHandlers;
-    
+
     /**
      * Array data, that need to be processed
      * @var array
      */
     private array $data;
-    
+
     /**
      * Paginated array after pagination
      * @var array|null
      */
     private ?array $paginatedData = null;
-    
+
     /**
      * Additional info about pagination or other
      * @var array|null
@@ -55,19 +55,24 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
     /**
      * @inheritDoc
      */
-    public function paginate(int $perPage = 15, int $page = 1): void
+    public function paginate(
+            int $perPage = 15,
+            int $page = 1,
+            int $prevCount = 5,
+            int $nextCount = 5
+    ): void
     {
         $total = count($this->data);
 
-                $paginator = new Paginator(
+        $paginator = new Paginator(
                 $page,
                 $perPage,
                 $total);
-        
+
         $offset = $paginator->getOffset();
         $sliced = array_slice($this->data, $offset, $perPage, true);
-        
-        $this->info = $paginator->toArray(count($sliced));
+
+        $this->info = $paginator->toArray(count($sliced), $prevCount, $nextCount);
 
         $this->paginatedData = $sliced;
     }
