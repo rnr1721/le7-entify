@@ -66,7 +66,7 @@ class Entification implements EntificationInterface
         return new FormDataProvider($handlers, $request, $uploadDir, $allowed, $maxSize);
     }
 
-    private function resolveRules(array|string $rules): array
+    protected function resolveRules(array|string $rules): array
     {
         if (is_string($rules)) {
             $name = $rules;
