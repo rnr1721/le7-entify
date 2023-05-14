@@ -76,6 +76,9 @@ class Paginator implements PaginatorInterface
      */
     protected function getPreviousPages(int $count = 5): array
     {
+        if ($this->page === 1) {
+            return [];
+        }
         $start = max(1, $this->page - $count);
         $end = $this->page - 1;
 
@@ -89,6 +92,9 @@ class Paginator implements PaginatorInterface
      */
     protected function getNextPages(int $count = 5): array
     {
+        if ($this->page === $this->lastPage) {
+            return [];
+        }
         $start = $this->page + 1;
         $end = min($this->page + $count, $this->lastPage);
 
