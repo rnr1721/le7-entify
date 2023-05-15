@@ -60,7 +60,7 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
             int $page = 1,
             int $prevCount = 5,
             int $nextCount = 5
-    ): void
+    ): self
     {
         $total = count($this->data);
 
@@ -77,6 +77,7 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
         ];
 
         $this->paginatedData = $sliced;
+        return $this;
     }
 
     /**
