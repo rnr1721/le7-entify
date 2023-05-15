@@ -104,7 +104,7 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
         $this->info = $info;
 
         $this->isNeedRefreshInfo = true;
-        
+
         $normalizedEntity = $this->processor_normalize($all);
         if (!$normalizedEntity) {
             return null;
@@ -214,6 +214,7 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
             }
         }
         $this->addErrors($this->filterLibrary->getErrors());
+        $this->filterLibrary->clearErrors();
         return $all;
     }
 
@@ -267,9 +268,14 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
         return $this->info ?? [];
     }
 
-    public function isNeedRefreshInfo():bool
+    public function isNeedRefreshInfo(): bool
     {
         return $this->isNeedRefreshInfo;
     }
-    
+
+    public function clearErrors(): void
+    {
+        $this->errors = [];
+    }
+
 }

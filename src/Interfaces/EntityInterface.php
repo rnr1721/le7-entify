@@ -44,6 +44,13 @@ interface EntityInterface
     public function renderOne(RenderSingleInterface $renderer, int $index = 0): mixed;
 
     /**
+     * Refresh data. This is not querying data from DataProvider
+     * This is repeating processes in EntityMain
+     * @return self
+     */
+    public function refresh(): self;
+    
+    /**
      * Get entity info if exists. For example it can be pagination info
      * @return array|null
      */

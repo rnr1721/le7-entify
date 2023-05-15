@@ -41,10 +41,28 @@ class EntityMain implements EntityInterface
     protected array|null $info = null;
 
     /**
+     * Store first info state
+     * @var array|null
+     */
+    protected array|null $infoBackup = null;
+
+    /**
      * Error messages list
      * @var array
      */
     protected array $errors = [];
+
+    /**
+     * Store first errors state
+     * @var array
+     */
+    protected array $errorsBackup = [];
+
+    /**
+     * Current result
+     * @var array|null
+     */
+    protected array|null $result = null;
 
     /**
      * EntityMain class created inside DataProvider.
@@ -63,11 +81,25 @@ class EntityMain implements EntityInterface
     {
         $this->data = $data;
         $this->info = $info;
+        $this->infoBackup = $info;
         if ($errors) {
+            $this->errorsBackup = $errors;
             $this->mergeErrors($errors);
         }
 
         $this->entityHandlers = $entityHandlers;
+        $this->result = $this->process($this->data);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function refresh(): self
+    {
+        $this->errors = $this->errorsBackup;
+        $this->info = $this->infoBackup;
+        $this->result = $this->process($this->data);
+        return $this;
     }
 
     /**
@@ -93,7 +125,7 @@ class EntityMain implements EntityInterface
      */
     public function export(): array|null
     {
-        return $this->process($this->data);
+        return $this->result;
     }
 
     /**
@@ -151,6 +183,7 @@ class EntityMain implements EntityInterface
                 /** @var array $errors */
                 $errors = $handler->getErrors();
                 $this->mergeErrors($errors);
+                $handler->clearErrors();
             }
         }
 

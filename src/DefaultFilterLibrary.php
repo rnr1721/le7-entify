@@ -240,4 +240,9 @@ class DefaultFilterLibrary implements FilterLibraryInterface
         return $this->errors;
     }
 
+    public function clearErrors(): void
+    {
+        $this->errors = [];
+    }
+
 }

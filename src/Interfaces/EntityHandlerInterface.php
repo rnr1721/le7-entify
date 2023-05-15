@@ -39,4 +39,10 @@ interface EntityHandlerInterface
      * @return array|null
      */
     public function getErrors(): array|null;
+    
+    /**
+     * Clear current errors list
+     * @return void
+     */
+    public function clearErrors(): void;
 }
