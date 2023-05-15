@@ -20,6 +20,21 @@ interface EntityHandlerInterface
     public function handle(array $all, array|null $info = null): array|null;
 
     /**
+     * Get fresh info array.
+     * Handler can change info
+     * @return array
+     */
+    public function getInfo(): array;
+
+    /**
+     * Is need to refresh info?
+     * When the handler chain is running, this flag determines whether the
+     * $info in the EntityMain needs to be updated.
+     * @return bool
+     */
+    public function isNeedRefreshInfo(): bool;
+
+    /**
      * Get errors that you can get while processing entity data
      * @return array|null
      */

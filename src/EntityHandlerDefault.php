@@ -55,6 +55,12 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
     protected array|null $info = null;
 
     /**
+     * Flag - is need to refresh Info in EntityMain?
+     * @var bool
+     */
+    protected bool $isNeedRefreshInfo = false;
+
+    /**
      * Array with error pessages
      * Array of string data
      * @var array
@@ -86,8 +92,19 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
      */
     public function handle(array $all, array|null $info = null): array|null
     {
+
+        if (is_array($info)) {
+            $info['rules'] = $this->rules;
+        } else {
+            $info = [
+                'rules' => $this->rules
+            ];
+        }
+
         $this->info = $info;
 
+        $this->isNeedRefreshInfo = true;
+        
         $normalizedEntity = $this->processor_normalize($all);
         if (!$normalizedEntity) {
             return null;
@@ -245,4 +262,14 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
         return $this->options;
     }
 
+    public function getInfo(): array
+    {
+        return $this->info ?? [];
+    }
+
+    public function isNeedRefreshInfo():bool
+    {
+        return $this->isNeedRefreshInfo;
+    }
+    
 }

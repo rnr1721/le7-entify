@@ -14,19 +14,26 @@ use function ceil,
 class Paginator implements PaginatorInterface
 {
 
+    private array $invalidPageValue;
     private int $page;
     private int $perPage;
     private int $totalCount;
     private int $lastPage;
     private int $offset;
 
-    public function __construct(int $page, int $perPage, int $totalCount)
+    public function __construct(
+            int $page,
+            int $perPage,
+            int $totalCount,
+            array $invalidPageValue = []
+    )
     {
         $this->page = $page;
         $this->perPage = $perPage;
         $this->totalCount = $totalCount;
         $this->lastPage = (int) ceil($totalCount / $perPage);
         $this->offset = ($this->page - 1) * $this->perPage;
+        $this->invalidPageValue = $invalidPageValue;
     }
 
     /**
@@ -110,6 +117,11 @@ class Paginator implements PaginatorInterface
             int $nextCount = 5
     ): array
     {
+
+        if ($this->page < 0 || $this->page > $this->lastPage) {
+            return $this->invalidPageValue;
+        }
+
         return [
             'current_page' => $this->page,
             'per_page' => $this->perPage,

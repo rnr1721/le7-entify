@@ -23,15 +23,25 @@ interface EntityInterface
 
     /**
      * Export only first of result
+     * @param int $index Index element in array
+     * @return array|null
      */
-    public function exportFirst() : array|null;
+    public function exportOne(int $index = 0): array|null;
 
     /**
-     * Render entity with EntityRendererInterface
-     * @param EntityRendererInterface $renderer
+     * Render repository entity with RenderRepoInterface
+     * @param RenderRepoInterface $renderer
      * @return mixed
      */
-    public function render(EntityRendererInterface $renderer): mixed;
+    public function renderRepo(RenderRepoInterface $renderer): mixed;
+
+    /**
+     * Render single entity with RenderSingleInterface
+     * @param RenderSingleInterface $renderer
+     * @param int $index
+     * @return mixed
+     */
+    public function renderOne(RenderSingleInterface $renderer, int $index = 0): mixed;
 
     /**
      * Get entity info if exists. For example it can be pagination info

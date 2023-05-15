@@ -72,7 +72,9 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
         $offset = $paginator->getOffset();
         $sliced = array_slice($this->data, $offset, $perPage, true);
 
-        $this->info = $paginator->toArray(count($sliced), $prevCount, $nextCount);
+        $this->info = [
+            'pagination' => $paginator->toArray(count($sliced), $prevCount, $nextCount)
+        ];
 
         $this->paginatedData = $sliced;
     }

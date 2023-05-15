@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Core\Entify;
 
-use Core\Entify\Interfaces\EntityOptionsInterface;
+use Core\Entify\Interfaces\RenderSingleInterface;
+use Core\Entify\Interfaces\RenderRepoInterface;
 use Core\Entify\Interfaces\EntityInterface;
+use Core\Entify\Interfaces\EntityOptionsInterface;
 use Core\Entify\Interfaces\EntityHandlerInterface;
-use Core\Entify\Interfaces\EntityRendererInterface;
 use Core\Entify\Interfaces\EntityHandlersInterface;
 use function count,
              array_merge;
@@ -72,10 +73,19 @@ class EntityMain implements EntityInterface
     /**
      * @inheritdoc
      */
-    public function render(EntityRendererInterface $renderer): mixed
+    public function renderRepo(RenderRepoInterface $renderer): mixed
     {
         $data = $this->export();
-        return $renderer->generate($data);
+        return $renderer->generate($data, $this->info, $this->errors);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function renderOne(RenderSingleInterface $renderer, int $index = 0): mixed
+    {
+        $data = $this->exportOne($index);
+        return $renderer->generate($data, $this->info, $this->errors);
     }
 
     /**
@@ -89,11 +99,11 @@ class EntityMain implements EntityInterface
     /**
      * @inheritdoc
      */
-    public function exportFirst(): array|null
+    public function exportOne(int $index = 0): array|null
     {
         $result = $this->export();
-        if (is_array($result) && isset($result[0])) {
-            return $result[0];
+        if (is_array($result) && isset($result[$index])) {
+            return $result[$index];
         }
         return null;
     }
@@ -134,6 +144,9 @@ class EntityMain implements EntityInterface
         /** @var EntityHandlerInterface $handler */
         foreach ($handlers as $handler) {
             $data = ($data === null ? null : $handler->handle($data, $this->info));
+            if ($handler->isNeedRefreshInfo()) {
+                $this->info = $handler->getInfo();
+            }
             if ($handler->getErrors() || $data === null) {
                 /** @var array $errors */
                 $errors = $handler->getErrors();
