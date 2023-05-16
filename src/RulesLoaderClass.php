@@ -6,7 +6,7 @@ namespace Core\Entify;
 
 use Core\Entify\Rules;
 use Core\Entify\Interfaces\RulesInterface;
-use Core\Entify\Interfaces\RulesModelInterface;
+use Core\Entify\Interfaces\ModelInterface;
 use Core\Entify\Interfaces\RulesLoaderInterface;
 use \RuntimeException;
 use function ucfirst,
@@ -37,19 +37,19 @@ class RulesLoaderClass implements RulesLoaderInterface
     }
 
     /**
-     * Find the class (RulesModelInterface) with rules data
+     * Find the class (ModelInterface) with rules data
      * @param string $modelName Name of rules model
      * @param string $modelNamespace Namespace for find classes
-     * @return RulesModelInterface
+     * @return ModelInterface
      * @throws RuntimeException
      */
-    private function findModel(string $modelName, string $modelNamespace): RulesModelInterface
+    private function findModel(string $modelName, string $modelNamespace): ModelInterface
     {
         $className = $modelNamespace . ucfirst(str_replace('_', '', $modelName));
         if (class_exists($className)) {
             $object = new $className();
-            if (!$object instanceof RulesModelInterface) {
-                throw new RuntimeException("RulesClass::findModel(): class " . $className . ' must be instance of ' . RulesModelInterface::class);
+            if (!$object instanceof ModelInterface) {
+                throw new RuntimeException("RulesClass::findModel(): class " . $className . ' must be instance of ' . ModelInterface::class);
             }
             return $object;
         } else {

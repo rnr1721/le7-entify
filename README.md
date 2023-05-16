@@ -101,9 +101,9 @@ declare(strict_types=1);
 
 namespace Entities;
 
-use Core\Entify\Interfaces\RulesModelInterface;
+use Core\Entify\Interfaces\ModelInterface;
 
-class Contactform implements RulesModelInterface
+class Contactform implements ModelInterface
 {
 
     public function getRules(): array

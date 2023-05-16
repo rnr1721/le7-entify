@@ -9,7 +9,7 @@ namespace Core\Entify\Interfaces;
  * For example you can ctore models in App\Rules namespace.
  * It have method that give us rules array
  */
-interface RulesModelInterface
+interface ModelInterface
 {
 
     /**
