@@ -14,11 +14,21 @@ class EntityOptions implements EntityOptionsInterface
 {
 
     private array $filtersForSkip = [];
+    private bool $allowHideFilter = true;
     private bool $returnIfNotExistsErrors = true;
     private bool $returnIfValidationErrors = false;
     private bool $skipFilters = false;
     private bool $skipValidation = false;
     private bool $deleteRedundant = true;
+
+    /**
+     * @inheritdoc
+     */
+    public function setAllowHideFilter(bool $allowHideFilter): self
+    {
+        $this->allowHideFilter = $allowHideFilter;
+        return $this;
+    }
 
     /**
      * @inheritdoc

@@ -227,12 +227,14 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
      */
     protected function processor_hide(array $all): array
     {
-        foreach ($all as &$entity) {
-            /** @var string $field */
-            foreach (array_keys($entity) as $field) {
-                $rules = $this->rules[$field];
-                if (isset($rules['hide']) && $rules['hide'] === true) {
-                    unset($entity[$field]);
+        if ($this->options->getBoolOption('allowHideFilter')) {
+            foreach ($all as &$entity) {
+                /** @var string $field */
+                foreach (array_keys($entity) as $field) {
+                    $rules = $this->rules[$field];
+                    if (isset($rules['hide']) && $rules['hide'] === true) {
+                        unset($entity[$field]);
+                    }
                 }
             }
         }

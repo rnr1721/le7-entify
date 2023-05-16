@@ -14,6 +14,14 @@ interface EntityOptionsInterface
 {
 
     /**
+     * Turn on or off hide filter
+     * Default: true
+     * @param bool $allowHideFilter
+     * @return self
+     */
+    public function setAllowHideFilter(bool $allowHideFilter): self;
+    
+    /**
      * Delete redundant fields from entity
      * @param bool $deleteRedundant
      * Default true
