@@ -13,6 +13,7 @@ use function property_exists;
 class EntityOptions implements EntityOptionsInterface
 {
 
+    private array $filtersForSkip = [];
     private bool $returnIfNotExistsErrors = true;
     private bool $returnIfValidationErrors = false;
     private bool $skipFilters = false;
@@ -73,6 +74,29 @@ class EntityOptions implements EntityOptionsInterface
             return $this->{$optionName};
         }
         return false;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isFilterSkipped(string $filter): bool
+    {
+        if (in_array($filter, $this->filtersForSkip)) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function skipFilter(string $filter): self
+    {
+        $filters = explode(',', $filter);
+        foreach ($filters as $currentFilter) {
+            $this->filtersForSkip[] = $currentFilter;
+        }
+        return $this;
     }
 
 }

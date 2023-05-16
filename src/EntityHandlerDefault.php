@@ -206,9 +206,11 @@ class EntityHandlerDefault implements EntityHandlerDefaultInterface
             foreach ($entity as $field => $value) {
                 $filters = $this->rules[$field];
                 foreach ($filters as $filter => $options) {
-                    $method = 'filter_' . $filter;
-                    if (method_exists($this->filterLibrary, $method)) {
-                        $entity[$field] = $this->filterLibrary->{$method}($field, $value, $options);
+                    if (!$this->options->isFilterSkipped($filter)) {
+                        $method = 'filter_' . $filter;
+                        if (method_exists($this->filterLibrary, $method)) {
+                            $entity[$field] = $this->filterLibrary->{$method}($field, $value, $options);
+                        }
                     }
                 }
             }

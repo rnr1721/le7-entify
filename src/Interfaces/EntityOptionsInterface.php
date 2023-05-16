@@ -58,4 +58,18 @@ interface EntityOptionsInterface
      * @return bool
      */
     public function getBoolOption(string $optionName): bool;
+
+    /**
+     * Set filter that must to be skipped
+     * @param string $filter Can be comma-separated
+     * @return self
+     */
+    public function skipFilter(string $filter): self;
+
+    /**
+     * If filter must be skipped?
+     * @param string $filter Filter method
+     * @return bool
+     */
+    public function isFilterSkipped(string $filter): bool;
 }
