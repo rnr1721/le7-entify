@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Core\Entify\Interfaces;
 
+use Core\Entify\Interfaces\EntityOptionsInterface;
 use Core\Entify\Interfaces\EntityInterface;
 
 /**
@@ -16,9 +17,14 @@ interface DataProviderInterface
 {
 
     /**
+     * Get options or Entity processing for change it
+     * @return EntityOptionsInterface
+     */
+    public function getOptions(): EntityOptionsInterface;
+
+    /**
      * Get ready entity that can be rendered by EntityRenderer interface
      * @return EntityInterface
      */
     public function getEntity(): EntityInterface;
-
 }

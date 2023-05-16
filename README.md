@@ -459,24 +459,24 @@ $data = [
 // Starts with lowercase
 $provider = $entification->getArrayProvider($data, 'contactform');
 
-// Get entity
-$entity = $provider->getEntity();
-
 // If this, the fields that not present in rules, will be deleted
 // Default is true;
-$entity->getOptions()->setDeleteRedundant(true);
+$provider->getOptions()->setDeleteRedundant(true);
 
 // Skip validation (only skip validator)
 // Default is false
-$entity->getOptions()->setSkipValidation(true);
+$provider->getOptions()->setSkipValidation(true);
 
 // If validator got errors, any filters will not be applied
 // Default false
-$entity->getOptions()->setReturnIfValidationErrors(true);
+$provider->getOptions()->setReturnIfValidationErrors(true);
 
 // If some field of array not present in rules, return before filters and validation
 // Default false
-$entity->getOptions()->setReturnIfNotExistsErrors(true);
+$provider->getOptions()->setReturnIfNotExistsErrors(true);
+
+// Get entity
+$entity = $provider->getEntity();
 
 // our validated and normalized array
 print_r($entity->export())

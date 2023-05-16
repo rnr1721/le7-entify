@@ -57,12 +57,6 @@ interface EntityInterface
     public function getInfo(): array|null;
 
     /**
-     * Get default handler configuration object
-     * @return EntityOptionsInterface
-     */
-    public function getOptions(): EntityOptionsInterface;
-
-    /**
      * Get handlers storage
      * @return EntityHandlersInterface
      */

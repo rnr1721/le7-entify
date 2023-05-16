@@ -7,7 +7,6 @@ namespace Core\Entify;
 use Core\Entify\Interfaces\RenderSingleInterface;
 use Core\Entify\Interfaces\RenderRepoInterface;
 use Core\Entify\Interfaces\EntityInterface;
-use Core\Entify\Interfaces\EntityOptionsInterface;
 use Core\Entify\Interfaces\EntityHandlerInterface;
 use Core\Entify\Interfaces\EntityHandlersInterface;
 use function count,
@@ -149,14 +148,6 @@ class EntityMain implements EntityInterface
             return null;
         }
         return $this->errors;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getOptions(): EntityOptionsInterface
-    {
-        return $this->entityHandlers->getOptions();
     }
 
     private function mergeErrors(array $errors): void

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Core\Entify\DataProvider;
 
-use Core\Entify\Paginator;
-use Core\Entify\Interfaces\EntityHandlersInterface;
-use Core\Entify\DataProvider\Interfaces\DataProviderPaginatedInterface;
 use Core\Entify\Interfaces\EntityInterface;
+use Core\Entify\Interfaces\EntityHandlersInterface;
+use Core\Entify\Interfaces\EntityOptionsInterface;
+use Core\Entify\Paginator;
+use Core\Entify\DataProvider\Interfaces\DataProviderPaginatedInterface;
 use Core\Entify\EntityMain;
 use function count,
              array_slice;
@@ -93,6 +94,11 @@ class ArrayDataProvider implements DataProviderPaginatedInterface
                 $data,
                 $this->info
         );
+    }
+
+    public function getOptions(): EntityOptionsInterface
+    {
+        return $this->entityHandlers->getOptions();
     }
 
 }

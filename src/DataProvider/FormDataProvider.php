@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Core\Entify\DataProvider;
 
+use Core\Entify\Interfaces\EntityInterface;
+use Core\Entify\Interfaces\EntityOptionsInterface;
 use Core\Entify\Interfaces\EntityHandlersInterface;
 use Core\Entify\DataProvider\Interfaces\DataProviderFormInterface;
-use Core\Entify\Interfaces\EntityInterface;
 use Core\Entify\EntityMain;
 use Psr\Http\Message\ServerRequestInterface;
 use \RuntimeException;
@@ -33,25 +34,25 @@ class FormDataProvider implements DataProviderFormInterface
      * @var ServerRequestInterface
      */
     private ServerRequestInterface $request;
-    
+
     /**
      * Entity handlers object for manage handlers queue
      * @var EntityHandlersInterface
      */
     private EntityHandlersInterface $entityHandlers;
-    
+
     /**
      * Directory to copy uploaded files
      * @var string|null
      */
     private ?string $uploadDir = null;
-    
+
     /**
      * Allowed mime types for uploaded files
      * @var array
      */
     private array $allowed = [];
-    
+
     /**
      * Max file size in bytes
      * @var int
@@ -163,6 +164,11 @@ class FormDataProvider implements DataProviderFormInterface
                 $valueInt *= 1024;
         }
         return $valueInt;
+    }
+
+    public function getOptions(): EntityOptionsInterface
+    {
+        return $this->entityHandlers->getOptions();
     }
 
 }
